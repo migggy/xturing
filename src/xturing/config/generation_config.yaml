@@ -173,3 +173,17 @@ bloom_lora_int8:
   top_k: 4
   max_new_tokens: 256
   do_sample: false
+
+# Contrastive search
+cerebras6.7b_lora_int8:
+  penalty_alpha: 0.6
+  top_k: 4
+  max_new_tokens: 256
+  do_sample: false
+
+# Contrastive search
+japanese_gpt2_lora_int8:
+  penalty_alpha: 0.6
+  top_k: 4
+  max_new_tokens: 256
+  do_sample: false

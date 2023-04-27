@@ -6,7 +6,7 @@ from .galactica import Galactica, GalacticaInt8, GalacticaLora, GalacticaLoraInt
 from .gpt2 import GPT2, GPT2Int8, GPT2Lora, GPT2LoraInt8
 from .gptj import GPTJ, GPTJInt8, GPTJLora, GPTJLoraInt8
 from .llama import Llama, LlamaInt8, LlamaLora, LlamaLoraInt4, LlamaLoraInt8
-from .new_model import Cerebras67bLoraInt8Model
+from .new_model import Cerebras67bLoraInt8Model, JapaneseGPT2LoraInt8Model
 from .opt import OPT, OPTInt8, OPTLora, OPTLoraInt8
 from .stable_diffusion import StableDiffusion
 
@@ -43,5 +43,8 @@ BaseModel.add_to_registry(BloomInt8.config_name, BloomInt8)
 BaseModel.add_to_registry(BloomLoraInt8.config_name, BloomLoraInt8)
 BaseModel.add_to_registry(
     Cerebras67bLoraInt8Model.config_name, Cerebras67bLoraInt8Model
+)
+BaseModel.add_to_registry(
+    JapaneseGPT2LoraInt8Model.config_name, JapaneseGPT2LoraInt8Model
 )
 BaseModel.add_to_registry(StableDiffusion.config_name, StableDiffusion)

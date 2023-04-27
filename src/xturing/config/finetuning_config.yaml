@@ -161,3 +161,17 @@ bloom_lora_int8:
   num_train_epochs: 3
   batch_size: 8
   max_length: 256
+
+cerebras6.7b_lora_int8:
+  learning_rate: 1e-4
+  weight_decay: 0.01
+  num_train_epochs: 3
+  batch_size: 8
+  max_length: 256
+
+japanese_gpt2_lora_int8:
+  learning_rate: 1e-4
+  weight_decay: 0.01
+  num_train_epochs: 3
+  batch_size: 8
+  max_length: 256

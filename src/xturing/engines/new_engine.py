@@ -17,3 +17,18 @@ class Cerebras67bLoraInt8Engine(CausalLoraEngine):
 
         self.tokenizer.pad_token = self.tokenizer.eos_token
         self.tokenizer.pad_token_id = self.tokenizer.eos_token_id
+
+
+class JapaneseGPT2LoraInt8Engine(CausalLoraEngine):
+    config_name: str = "japanese_gpt2_lora_engine_int8"
+
+    def __init__(self, weights_path: Optional[Union[str, Path]] = None):
+        super().__init__(
+            model_name="rinna/japanese-gpt-1b",
+            weights_path=weights_path,
+            load_8bit=True,
+            target_modules=["c_attn"],
+        )
+
+        self.tokenizer.pad_token = self.tokenizer.eos_token
+        self.tokenizer.pad_token_id = self.tokenizer.eos_token_id
