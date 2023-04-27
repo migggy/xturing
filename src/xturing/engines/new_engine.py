@@ -20,7 +20,7 @@ class Cerebras67bLoraInt8Engine(CausalLoraEngine):
 
 
 class JapaneseGPT2LoraInt8Engine(CausalLoraEngine):
-    config_name: str = "japanese_gpt2_lora_engine_int8"
+    config_name: str = "japanese_gpt2_lora_int8_engine"
 
     def __init__(self, weights_path: Optional[Union[str, Path]] = None):
         super().__init__(
