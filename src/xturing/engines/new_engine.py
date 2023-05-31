@@ -5,7 +5,7 @@ from xturing.engines.causal import CausalLoraEngine
 
 
 class Cerebras67bLoraInt8Engine(CausalLoraEngine):
-    config_name: str = "cerebras6.7b_lora_int8_engine"
+    config_name: str = "cerebras6_7b_lora_int8_engine"
 
     def __init__(self, weights_path: Optional[Union[str, Path]] = None):
         super().__init__(
@@ -19,15 +19,15 @@ class Cerebras67bLoraInt8Engine(CausalLoraEngine):
         self.tokenizer.pad_token_id = self.tokenizer.eos_token_id
 
 
-class JapaneseGPT2LoraInt8Engine(CausalLoraEngine):
-    config_name: str = "japanese_gpt2_lora_int8_engine"
+class Calm7bLoraInt8Engine(CausalLoraEngine):
+    config_name: str = "calm7b_lora_int8_engine"
 
     def __init__(self, weights_path: Optional[Union[str, Path]] = None):
         super().__init__(
-            model_name="rinna/japanese-gpt-1b",
+            model_name="cyberagent/open-calm-7b",
             weights_path=weights_path,
             load_8bit=True,
-            target_modules=["c_attn"],
+            target_modules=["query_key_value"],
         )
 
         self.tokenizer.pad_token = self.tokenizer.eos_token
