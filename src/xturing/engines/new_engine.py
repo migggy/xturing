@@ -32,3 +32,18 @@ class Calm7bLoraInt8Engine(CausalLoraEngine):
 
         self.tokenizer.pad_token = self.tokenizer.eos_token
         self.tokenizer.pad_token_id = self.tokenizer.eos_token_id
+
+
+class Rinna3bLoraInt8Engine(CausalLoraEngine):
+    config_name: str = "rinna3b_lora_int8_engine"
+
+    def __init__(self, weights_path: Optional[Union[str, Path]] = None):
+        super().__init__(
+            model_name="rinna/japanese-gpt-neox-3.6b-instruction-ppo",
+            weights_path=weights_path,
+            load_8bit=True,
+            target_modules=["query_key_value"],
+        )
+
+        self.tokenizer.pad_token = self.tokenizer.eos_token
+        self.tokenizer.pad_token_id = self.tokenizer.eos_token_id

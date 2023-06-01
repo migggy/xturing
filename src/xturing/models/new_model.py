@@ -1,6 +1,10 @@
 from typing import Optional
 
-from xturing.engines.new_engine import Calm7bLoraInt8Engine, Cerebras67bLoraInt8Engine
+from xturing.engines.new_engine import (
+    Calm7bLoraInt8Engine,
+    Cerebras67bLoraInt8Engine,
+    Rinna3bLoraInt8Engine,
+)
 from xturing.models.causal import CausalLoraInt8Model
 
 
@@ -16,3 +20,10 @@ class Calm7bLoraInt8Model(CausalLoraInt8Model):
 
     def __init__(self, weights_path: Optional[str] = None):
         super().__init__(Calm7bLoraInt8Engine.config_name, weights_path)
+
+
+class Rinna3bLoraInt8Model(CausalLoraInt8Model):
+    config_name: str = "rinna3b_lora_int8"
+
+    def __init__(self, weights_path: Optional[str] = None):
+        super().__init__(Rinna3bLoraInt8Engine.config_name, weights_path)
